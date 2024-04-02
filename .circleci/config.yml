@@ -13,7 +13,7 @@ jobs:
       - run:
            name: Print Environment Variables
            command: |
-            echo "Global Variable is: $MY_NAME"
+            echo "My Name is: $MY_NAME"
 
 workflows:
   version: 2
