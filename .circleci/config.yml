@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Print Variable
           command: |
-            echo "Requested Variable: $<< parameters.variable_name >>"
+            echo "$ITI"
 
 workflows:
   version: 2
@@ -22,4 +22,5 @@ workflows:
       - print_variable:
           context_name: "GLOBAL"
           variable_name: "MY_NAME"
+
 
