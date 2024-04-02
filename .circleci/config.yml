@@ -2,16 +2,13 @@ version: 2.1
 
 # declare jobs to be stacked in the workflow when pipeline is triggered
 jobs:
-  print-Variable:
+  Print_My_Name:
     # Pull docker image to be used to build app 1
     docker:
-      - image: mcr.microsoft.com/dotnet/sdk:8.0
-
-    # Declare the working directory for app in the container
-    working_directory: ~/project
+      - image: circleci/python:3.9
     steps:
       - run:
-           name: Print Environment Variables
+           name: Print Variables
            command: |
             echo "My Name is: $MY_NAME"
 
@@ -19,6 +16,6 @@ workflows:
   version: 2
   Print_Variables:
     jobs:
-       - print-Variable:
+       - Print_My_Name:
           parameters:
             MY_NAME: << parameters.context.GLOBAL.MY_NAME >>
