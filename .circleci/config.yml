@@ -25,4 +25,4 @@ workflows:
     jobs:
        - Print_My_Name:
           context_name:"GLOBAL"
-          variable_name:"MY_NAME"
+          variable_name:'"MY_NAME"'
