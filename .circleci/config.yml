@@ -14,7 +14,7 @@ workflows:
   version: 2
   print_variables:
     jobs:
-      - print_environment_variables:
+      - print_environment_variables
 
 
 
