@@ -10,12 +10,11 @@ jobs:
       - run:
            name: Print Variables
            command: |
-            echo "My Name is: $\<< parameters.MY_NAME"
+            echo "My Name is: MSUGH"
 
 workflows:
   version: 2
   Print_Variables:
     jobs:
        - Print_My_Name:
-          parameters:
-            MY_NAME:"HELLO"
+
