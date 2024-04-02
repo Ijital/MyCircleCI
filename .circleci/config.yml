@@ -10,7 +10,7 @@ jobs:
       - run:
            name: Print Variables
            command: |
-           echo "Requested Variable: $<< parameters.variable_name >>"
+              echo "Requested Variable: $<< parameters.variable_name >>"
 
 workflows:
   version: 2
@@ -19,4 +19,3 @@ workflows:
        - Print_My_Name:
           context_name:"GLOBAL"
           variable_name:"MY_NAME"
-
