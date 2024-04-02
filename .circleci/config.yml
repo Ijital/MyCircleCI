@@ -11,10 +11,10 @@ jobs:
            name: Print Variables
            command: |
             echo "My Name is: $parameters.context.GLOBAL.MY_NAME"
+            echo "My Context Variable: $<< parameters.context.GLOBAL.MY_NAME >>"
 
 workflows:
   version: 2
   Print_Variables:
     jobs:
        - Print_My_Name
-
