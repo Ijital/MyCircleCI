@@ -4,7 +4,7 @@ jobs:
   print_environment_variables:
     docker:
       - image: circleci/python:3.9
-   steps:
+    steps:
       - run:
           name: Print Environment Variables
           command: |
