@@ -20,6 +20,6 @@ workflows:
   print_variables:
     jobs:
       - print_variable:
-          context_name: "my_context"
-          variable_name: "MY_VARIABLE"
+          context_name: "GLOBAL"
+          variable_name: "MY_NAME"
 
