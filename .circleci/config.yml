@@ -3,19 +3,16 @@ version: 2.1
 # declare jobs to be stacked in the workflow when pipeline is triggered
 jobs:
   print-Variable:
-
     # Pull docker image to be used to build app 1
     docker:
       - image: mcr.microsoft.com/dotnet/sdk:8.0
 
     # Declare the working directory for app in the container
     working_directory: ~/project
-
     steps:
       - run:
            name: Print Environment Variables
-           command: |
-            echo "Global Variable is : $MY_NAME"
+           command: echo "Global Variable is: $MY_NAME"
 
 workflows:
   version: 2
@@ -23,4 +20,4 @@ workflows:
     jobs:
        - print-Variable:
           parameters:
-            MY_GLOBAL_VARIABLE: << parameters.context.GLOBAL.MY_NAME >>
+            MY_NAME: << parameters.context.GLOBAL.MY_NAME >>
