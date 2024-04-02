@@ -15,10 +15,12 @@ jobs:
       - run:
            name: Print Environment Variables
            command: |
-            echo "MY_VARIABLE: $MY_VARIABLE"
+            echo "Global Variable is : $MY_NAME"
 
 workflows:
   version: 2
-  build_all_and_persit_app_app_artifacts:
+  Print_Variables:
     jobs:
-      - print-Variable
+       - print-Variable:
+          parameters:
+            MY_GLOBAL_VARIABLE: << parameters.context.GLOBAL.MY_NAME >>
