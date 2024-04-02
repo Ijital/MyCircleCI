@@ -10,7 +10,7 @@ jobs:
       - run:
            name: Print Variables
            command: |
-            echo "My Name is msugh"
+            echo "My Name is: $MY_NAME"
 
 workflows:
   version: 2
