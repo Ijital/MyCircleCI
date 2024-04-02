@@ -1,28 +1,25 @@
 version: 2.1
 
-# declare jobs to be stacked in the workflow when pipeline is triggered
 jobs:
-  Print_My_Name:
-    # Pull docker image to be used to build app 1
+  print_variable:
     docker:
       - image: circleci/python:3.9
-
     parameters:
       context_name:
         type: string
       variable_name:
         type: string
-
     steps:
       - run:
-           name: Print Variables
-           command: |
-              echo "Requested Variable: $<< parameters.variable_name >>"
+          name: Print Variable
+          command: |
+            echo "Requested Variable: $<< parameters.variable_name >>"
 
 workflows:
   version: 2
-  Print_Variables:
+  print_variables:
     jobs:
-       - Print_My_Name:
-          context_name:"GLOBAL"
-          variable_name:'"MY_NAME"'
+      - print_variable:
+          context_name: "my_context"
+          variable_name: "MY_VARIABLE"
+
