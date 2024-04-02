@@ -18,4 +18,5 @@ workflows:
     jobs:
        - Print_My_Name:
           parameters:
-            MY_NAME: << parameters.context.GLOBAL.MY_NAME >>
+            MY_NAME:
+              type: string
