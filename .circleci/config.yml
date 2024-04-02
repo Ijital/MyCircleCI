@@ -1,26 +1,20 @@
 version: 2.1
 
 jobs:
-  print_variable:
+  print_environment_variables:
     docker:
       - image: circleci/python:3.9
-    parameters:
-      context_name:
-        type: string
-      variable_name:
-        type: string
     steps:
       - run:
-          name: Print Variable
+          name: Print Environment Variables
           command: |
-            echo "$ITI"
+            printenv
 
 workflows:
   version: 2
   print_variables:
     jobs:
-      - print_variable:
-          context_name: "GLOBAL"
-          variable_name: "MY_NAME"
+      - print_environment_variables:
+
 
 
